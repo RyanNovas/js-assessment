@@ -2,12 +2,15 @@ exports = (typeof window === 'undefined') ? global : window;
 
 exports.asyncAnswers = {
     async: function(value) {
+      // returns a promise that will do one of two things
       return new Promise(function(resolve, reject) {
         setTimeout(function() {
           if (true) {
+            // if the condition passes it will return the value
             resolve(value);
           } else
-            resolve('false');
+            // if the condition fails then it will reject it then it will reject it
+            reject('false');
         }, 1000);
       });
     },
